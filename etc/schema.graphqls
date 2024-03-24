@@ -1,0 +1,19 @@
+type StoreConfig {
+    pix_qrcode_enabled: Boolean @doc(description: "Indicates whether the Pix QRCode payment method is enabled.")
+    pix_qrcode_title: String @doc(description: "The title of the Pix QRCode payment method displayed on the storefront.")
+    pix_qrcode_comment: String @doc(description: "The mesage that displayed before place order.")
+    pix_qrcode_type_proof_payment: String @doc(description: "The type of sent the proof of payment.")
+    pix_qrcode_send_proof_payment_to_email: String @doc(description: "The email to sent the proof of payment.")
+    pix_qrcode_send_proof_payment_to_whatsapp_number: String @doc(description: "The Whatsapp number to sent the proof of payment.")
+}
+
+type Query {
+    pixQrCodePaymentAdditionalInformation(
+        order_number: String! @doc(description: "The order number.")
+    ): pixQrCodePaymentAdditionalInformationOutput @resolver(class: "GFNL\\PixQrCodeGraphQL\\Model\\Resolver\\PaymentAdditionalInformation") @doc(description: "Get the additional information for the Pix QRCode payment method.")
+}
+
+type pixQrCodePaymentAdditionalInformationOutput {
+    payload_pix: String @doc(description: "The payload for the Pix QRCode payment method.")
+    qrcode: String @doc(description: "The qrcode for the Pix QRCode payment method.")
+}

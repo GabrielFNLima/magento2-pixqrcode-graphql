@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\StoreGraphQl\Model\Resolver\Store\StoreConfigDataProvider">
+        <arguments>
+            <argument name="extendedConfigData" xsi:type="array">
+                <item name="pix_qrcode_enabled" xsi:type="string">payment/gfnl_pixqrcode/active</item>
+                <item name="pix_qrcode_title" xsi:type="string">payment/gfnl_pixqrcode/title</item>
+                <item name="pix_qrcode_comment" xsi:type="string">payment/gfnl_pixqrcode/comment</item>
+                <item name="pix_qrcode_type_proof_payment" xsi:type="string">payment/gfnl_pixqrcode/type_proof_payment</item>
+                <item name="pix_qrcode_send_proof_payment_to_email" xsi:type="string">payment/gfnl_pixqrcode/send_proof_payment_to_email</item>
+                <item name="pix_qrcode_send_proof_payment_to_whatsapp_number" xsi:type="string">payment/gfnl_pixqrcode/send_proof_payment_to_whatsapp_number</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
